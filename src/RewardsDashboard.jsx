@@ -28,9 +28,9 @@ const RewardsDashboard = () => {
 
             {/* task1 */}
             <div className=" text-white ">
-              <div className=" bg-[#17212e]  p-6 my-6 rounded-lg w-3/4 mx-auto">
-                <h3 className="text-2xl font-bold">1. Challenges</h3>
-                <p className="text-lg mt-2">
+              <div className=" bg-[#17212e]  p-6 my-6 rounded-lg md:w-3/4 w-[90%] mx-auto">
+                <h3 className="md:text-2xl text-xl font-bold">1. Challenges</h3>
+                <p className="md:text-lg text-sm mt-2">
                   Participate in various challenges to earn points that can be
                   redeemed for exciting rewards. From simple tasks to more
                   complex puzzles, each challenge is an opportunity to improve
@@ -43,9 +43,9 @@ const RewardsDashboard = () => {
                   </button>
                 </div>
               </div>
-              <div className=" bg-[#17212e] my-2 p-4 rounded-lg w-3/4 mx-auto">
-                <h3 className="text-2xl font-bold">2. Refer</h3>
-                <p className="text-lg mt-2">
+              <div className=" bg-[#17212e] my-2 p-4 rounded-lg md:w-3/4 w-[90%] mx-auto">
+                <h3 className="md:text-2xl text-xl font-bold">2. Refer</h3>
+                <p className="md:text-lg text-md mt-2">
                   Share your unique referral link with friends and earn 100% of
                   the redeemable amount when they sign up and complete their
                   first challenge. The more friends you refer, the more rewards
@@ -182,40 +182,7 @@ const RewardsDashboard = () => {
           </div>
         );
       case "Wallet":
-        // Implement the Wallet tab yourself based on your design
         return (
-          // <div className="mt-8 p-4 bg-yellow-100 rounded-lg text-center">
-          //   <div className="relative bg-gray-800 text-white p-4 rounded-lg">
-          //     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full overflow-hidden border-4 border-white">
-          //       <img
-          //         src="https://via.placeholder.com/150"
-          //         alt="User"
-          //         className="w-full h-full object-cover"
-          //       />
-          //     </div>
-          //     <p className="mt-10 font-semibold">Hi Lorem, Purse Remaining</p>
-          //     <div className="flex justify-center items-center mt-4">
-          //       <svg
-          //         className="w-8 h-8 text-yellow-500 mr-2"
-          //         fill="none"
-          //         stroke="currentColor"
-          //         viewBox="0 0 24 24"
-          //         xmlns="http://www.w3.org/2000/svg"
-          //       >
-          //         <path
-          //           strokeLinecap="round"
-          //           strokeLinejoin="round"
-          //           strokeWidth="2"
-          //           d="M5 12h14M12 5l7 7-7 7"
-          //         />
-          //       </svg>
-          //       <p className="text-2xl font-semibold">400 Rs</p>
-          //     </div>
-          //   </div>
-          //   <button className="bg-blue-600 text-white px-4 py-2 rounded-lg mt-4">
-          //     Add More
-          //   </button>
-          // </div>
           <div className="mt-16 p-20 bg-[#F5CF6B] rounded-lg text-center relative h-[80%]">
             {/* Profile Image */}
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-10 md:w-40 md:h-40 w-32 h-32 rounded-full overflow-hidden border-4 border-white">
@@ -261,20 +228,24 @@ const RewardsDashboard = () => {
       <div className="max-w-screen overflow-x-hidden">
         {/* Blue gift header */}
         <div className="w-full bg-[#17212e] flex flex-row  h-fit">
-          <div className="w-3/5 p-4 mx-8">
-            <h1 className="md:text-6xl  font-bold my-7 text-white">
+          <div className="w-3/5 p-4 md:mx-8">
+            <h1 className="md:text-6xl  font-bold md:my-7 text-white">
               Earn <span className="text-[#F5CF6B]">Rewards</span> To Use
             </h1>
-            <h1 className=" md:text-4xl font-semibold text-white w-[90%] my-7 leading-relaxed">
+            <h1 className=" md:text-4xl font-semibold text-white w-[90%] md:my-7 leading-normal md:leading-relaxed">
               Get Reward Points by competiting and redeem the points for several
               exciting coupons!
             </h1>
-            <h1 className="md:text-4xl my-5 font-semibold text-[#F5CF6B] ">
+            <h1 className="md:text-4xl md:my-5 font-semibold text-[#F5CF6B] ">
               Compete globally or with you friends{" "}
             </h1>
           </div>
           <div className="w-2/5">
-            <img src={gift} alt="" className=" md:m-0 mt-28 " />
+            <img
+              src={gift}
+              alt=""
+              className=" md:m-0  scale-125 md:scale-100 mt-6"
+            />
           </div>
         </div>
         <div className="flex justify-center  my-6">
@@ -294,20 +265,22 @@ const RewardsDashboard = () => {
             </div>
           </div>
         </div>
-        <div className="mt-8 w-fit mx-auto border-[1px] border-gray-700 rounded-3xl">
-          {["Earn", "Redeem", "History", "Wallet"].map((tab) => (
-            <button
-              key={tab}
-              className={`px-4 py-2 mx-4 font-bold rounded-lg ${
-                activeTab === tab
-                  ? "bg-[#F5CF6B] text-[#17212e]"
-                  : "bg-white text-black"
-              }`}
-              onClick={() => setActiveTab(tab)}
-            >
-              {tab}
-            </button>
-          ))}
+        <div className="md:flex md:justify-center">
+          <div className="mt-8 flex flex-row md:justify-center justify-around border-[1px] border-gray-700 md:w-fit rounded-3xl">
+            {["Earn", "Redeem", "History", "Wallet"].map((tab) => (
+              <button
+                key={tab}
+                className={`md:px-4 md:py-2 px-2 py-2 mx-4 font-bold rounded-lg ${
+                  activeTab === tab
+                    ? "bg-[#F5CF6B] text-[#17212e]"
+                    : "bg-white text-black"
+                }`}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
         </div>
         {renderContent()}
 
